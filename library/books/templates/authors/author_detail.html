@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Author Detail</title>
+</head>
+<body>
+    <h1>Author Detail</h1>
+    <div>
+        <h2>Name:</h2>
+        <p>{{ author.name }}         
+            <a href="{% url 'edit_author' author.id %}" class="button">Edit Author</a>
+            <a href="{% url 'delete_author' author.id %}" class="button">Delete Author</a>
+        </p>
+    </div>
+    <a href="{% url 'author_list' %}" class="button">Back to Authors</a>
+</body>
+</html>

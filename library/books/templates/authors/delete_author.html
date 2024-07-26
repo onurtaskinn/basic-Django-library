@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Author</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete this author?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'author_detail' author.id %}">Cancel</a>
+</body>
+</html>
