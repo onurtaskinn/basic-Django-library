@@ -3,8 +3,7 @@
 <ul>
     {% for author in authors %}
         <li>{{ author.name }}
-            <a href="{% url 'edit_author' author.id %}" class="button">Edit Author</a>
-            <a href="{% url 'delete_author' author.id %}" class="button">Delete Author</a>
+            <a href="{% url 'author_detail' author.id %}" class="button">Detail</a>
         </li>  <!-- replace with your actual fields -->
     {% empty %}
         <li>No author added yet.</li>

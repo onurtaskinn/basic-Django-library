@@ -5,12 +5,29 @@
 </head>
 <body>
     <h1>Author Detail</h1>
+    <br>
     <div>
-        <h2>Name:</h2>
-        <p>{{ author.name }}         
+        <h2>Name :  {{ author.name }}  </h2>
+
+        <h4>
             <a href="{% url 'edit_author' author.id %}" class="button">Edit Author</a>
             <a href="{% url 'delete_author' author.id %}" class="button">Delete Author</a>
-        </p>
+        </h4>   
+        <br> 
+        <h2>Books:</h2>
+        <ul>
+            {% for book in author.books.all %}
+                <li>{{ book.title }}
+                    <a href="{% url 'book_detail' book.id %}" class="button">Detail</a>
+                </li>
+            {% empty %}
+                <li>No books available.</li>
+            {% endfor %}
+        </ul>
+
+        <br>
+
+        <a href="{% url 'create_book' author.id %}" class="button">Add Book</a>
     </div>
     <a href="{% url 'author_list' %}" class="button">Back to Authors</a>
 </body>

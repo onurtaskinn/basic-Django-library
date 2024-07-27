@@ -6,8 +6,15 @@
 <body>
     <h1>Book Detail</h1>
     <div>
-        <h2>Title:</h2>
-        <p>{{ book.title }}</p>
+        <h2>Title : {{ book.title }}</h2>
+        <p>            
+            <a href="{% url 'edit_book' book.id %}" class="button">Edit Book</a>
+            <a href="{% url 'delete_book' book.id %}" class="button">Delete Book</a>
+            <br><br>
+        </p>
+        <h2>Author :   <a href="{% url 'author_detail' book.author.id %}" class="button">{{ book.author.name }}</a></h2>
     </div>
+    <br>
+    <a href="{% url 'book_list' %}" class="button">Back to Books</a>
 </body>
 </html>
